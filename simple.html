@@ -46,15 +46,6 @@
             word-wrap: break-word;
         }
 
-        .nav-wrapper .secondary-button {
-            background: var(--secondary-button-fill-color);
-            border: 1px solid var(--secondary-button-border-color);
-            color: var(--secondary-button-text-color);
-            float: none;
-            margin: 0;
-            padding: 8px 16px;
-        }
-
         html {
             -webkit-text-size-adjust: 100%;
             font-size: 125%;
@@ -107,18 +98,6 @@
             outline: 0;
         }
 
-        .secondary-button:active {
-            border-color: white;
-            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3),
-                0 2px 6px 2px rgba(60, 64, 67, .15);
-        }
-
-        .secondary-button:hover {
-            background: var(--secondary-button-hover-fill-color);
-            border-color: var(--secondary-button-hover-border-color);
-            text-decoration: none;
-        }
-
         .error-code {
             color: var(--error-code-color);
             font-size: .8em;
@@ -164,11 +143,6 @@
             width: 100%;
         }
 
-        .small-link {
-            color: var(--small-link-color);
-            font-size: .875em;
-        }
-
         @media (max-width: 700px) {
             .interstitial-wrapper {
                 padding: 0 10%;
@@ -177,8 +151,7 @@
 
         @media (max-width: 420px) {
 
-            button,
-            .small-link {
+            button {
                 float: none;
                 font-size: .825em;
                 font-weight: 500;
@@ -188,13 +161,6 @@
 
             button {
                 padding: 16px 24px;
-            }
-
-            .secondary-button:not(.hidden) {
-                display: block;
-                margin-top: 20px;
-                text-align: center;
-                width: 100%;
             }
 
             .interstitial-wrapper {
@@ -211,16 +177,6 @@
    * Navigation buttons are anchored to the bottom of the screen.
    * Details message replaces the top content in its own scrollable area.
    */
-
-        @media (max-width: 420px) {
-            .nav-wrapper .secondary-button {
-                border: 0;
-                margin: 16px 0 0;
-                margin-inline-end: 0;
-                padding-bottom: 16px;
-                padding-top: 16px;
-            }
-        }
 
         /* Fixed nav. */
         @media (min-width: 240px) and (max-width: 420px) and (min-height: 401px),
@@ -247,10 +203,6 @@
             #main-content {
                 padding-bottom: 40px;
             }
-
-            button.small-link {
-                color: var(--google-blue-600);
-            }
         }
 
         @media (max-width: 420px) and (orientation: portrait),
@@ -259,9 +211,7 @@
                 margin: 0 auto;
             }
 
-            button,
-            button.small-link,
-            .nav-wrapper .secondary-button {
+            button {
                 font-family: Roboto-Regular, Helvetica;
                 font-size: .933em;
                 margin: 6px 0;
@@ -299,10 +249,6 @@
             #main-content {
                 margin: 0;
                 transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
-            .small-link {
-                border: 0;
             }
 
             .suggested-left>#control-buttons {
@@ -366,13 +312,8 @@
                 width: 100%;
             }
 
-            button,
-            .nav-wrapper .secondary-button {
+            button {
                 padding: 16px 24px;
-            }
-
-            button.small-link {
-                color: var(--google-blue-600);
             }
         }
 
@@ -425,16 +366,6 @@
             padding-inline-start: 0;
         }
 
-        [jscontent=hostName] {
-            overflow-wrap: break-word;
-        }
-
-        .secondary-button {
-            background: #d9d9d9;
-            color: #696969;
-            margin-inline-end: 16px;
-        }
-
         /* Decrease padding at low sizes. */
         @media (max-width: 640px),
         (max-height: 640px) {
@@ -443,49 +374,12 @@
             }
         }
 
-        /* details-button is special; it's a <button> element that looks like a link. */
-        #details-button {
-            box-shadow: none;
-            min-width: 0;
-        }
-
         /* Styles for platform dependent separation of controls and details button. */
         .suggested-left>#control-buttons {
             float: left;
         }
 
-        .suggested-left>#details-button {
-            float: right;
-        }
-
-        .suggested-left .secondary-button {
-            margin-inline-end: 0;
-            margin-inline-start: 16px;
-        }
-
         /* download-button shows both icon and text. */
-        #download-button {
-            padding-bottom: 4px;
-            padding-top: 4px;
-            position: relative;
-        }
-
-        #download-button::before {
-            background: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAO0lEQVQ4y2NgGArgPxIY1YChsOE/LtBAmpYG0mxpIOSDBpKUo2lpIDZxNJCkHKqlYZAla3RAHQ1DFgAARRroHyLNTwwAAAAASUVORK5CYII=) 1x,
-                    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAZElEQVRYw+3Ruw3AMAwDUY3OzZUmRRD4E9iim9wNwAdbEURHyk4AAAAATiCVK8lLyPsKeT9K3lsownnunfkPxO78hKiYHxBV8x2icr5BVM+/CMf8g3DN34Rzns6ViwHUAUQ/6wIAd5Km7l6c8AAAAABJRU5ErkJggg==) 2x) no-repeat;
-            content: '';
-            display: inline-block;
-            height: 24px;
-            margin-inline-end: 4px;
-            margin-inline-start: -4px;
-            vertical-align: middle;
-            width: 24px;
-        }
-
-        #download-button:disabled {
-            background: rgb(180, 206, 249);
-            color: rgb(255, 255, 255);
-        }
 
         #buttons::after {
             clear: both;
@@ -494,19 +388,9 @@
             width: 100%;
         }
 
-        /* Offline page */
-
-        .offline .runner-container:focus-visible {
-            outline: 3px solid var(--google-blue-300);
-        }
-
         /* Custom toggle */
 
         @media (max-width: 420px) {
-            #download-button {
-                padding-bottom: 12px;
-                padding-top: 12px;
-            }
 
             .suggested-left>#control-buttons {
                 float: none;
@@ -575,9 +459,10 @@
                 <div id="suggestions-list">
                     <p></p>
                     <ul class="single-suggestion">
-                        <li>If spelling
-                            is correct, <a href="javascript:diagnoseErrors()" id="diagnose-link">try
-                                running Windows Network Diagnostics</a>.</li>
+                        <li>If spelling is correct,
+                            <a href="javascript:diagnoseErrors()" id="diagnose-link">
+                                try running Windows Network Diagnostics</a>.
+                        </li>
                     </ul>
                 </div>
                 <div class="error-code">DNS_PROBE_FINISHED_NXDOMAIN
