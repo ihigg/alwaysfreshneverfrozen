@@ -563,59 +563,32 @@
     </style>
 </head>
 
-<body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%" jstcache="0">
-    <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
-        <div id="main-content" jstcache="0">
-            <div class="icon icon-generic" jstcache="0"></div>
-            <div id="main-message" jstcache="0">
-                <h1 jstcache="0">
-                    <span jsselect="heading" jsvalues=".innerHTML:msg" jstcache="9">This site can’t be reached</span>
+<body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%">
+    <div id="main-frame-error" class="interstitial-wrapper">
+        <div id="main-content">
+            <div class="icon icon-generic"></div>
+            <div id="main-message">
+                <h1>
+                    <span>This site can’t be reached</span>
                 </h1>
-                <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="1">Check if there is a typo in <span
-                        jscontent="hostName" jstcache="22">alwaysfreshneverfrozen.com</span>.</p>
-                <!--The suggestion list and error code are normally presented inline,
-            in which case error-information-popup-* divs have no effect. When
-            error-information-popup-container has the use-popup-container class, this
-            information is provided in a popup instead.-->
-                <div id="error-information-popup-container" jstcache="0">
-                    <div id="error-information-popup" jstcache="0">
-                        <div id="error-information-popup-box" jstcache="0">
-                            <div id="error-information-popup-content" jstcache="0">
-                                <div id="suggestions-list" style=""
-                                    jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)"
-                                    jstcache="16">
-                                    <p jsvalues=".innerHTML:suggestionsSummaryListHeader" jstcache="18"></p>
-                                    <ul jsvalues=".className:suggestionsSummaryList.length == 1 ? 'single-suggestion' : ''"
-                                        jstcache="19" class="single-suggestion">
-                                        <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary"
-                                            jstcache="21" jsinstance="*0">If spelling is correct, <a
-                                                href="javascript:diagnoseErrors()" id="diagnose-link" jstcache="0">try
-                                                running Windows Network Diagnostics</a>.</li>
-                                    </ul>
-                                </div>
-                                <div class="error-code" jscontent="errorCode" jstcache="17">DNS_PROBE_FINISHED_NXDOMAIN
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <p>Check if there is a typo in <span>alwaysfreshneverfrozen.com</span>.</p>
+                <div id="suggestions-list">
+                    <p></p>
+                    <ul class="single-suggestion">
+                        <li>If spelling
+                            is correct, <a href="javascript:diagnoseErrors()" id="diagnose-link">try
+                                running Windows Network Diagnostics</a>.</li>
+                    </ul>
+                </div>
+                <div class="error-code">DNS_PROBE_FINISHED_NXDOMAIN
                 </div>
             </div>
         </div>
-        <div id="buttons" class="nav-wrapper suggested-left" jstcache="0">
-            <div id="control-buttons" jstcache="0">
-                <button id="reload-button" class="blue-button text-button" onclick="reloadButtonClick(this.url);"
-                    jsselect="reloadButton" jsvalues=".url:reloadUrl" jscontent="msg" jstcache="5">Reload</button>
-                <button id="download-button" class="blue-button text-button" onclick="downloadButtonClick()"
-                    jsselect="downloadButton" jscontent="msg" jsvalues=".disabledText:disabledMsg" jstcache="6"
-                    style="display: none;">
-                </button>
+        <div id="buttons" class="nav-wrapper suggested-left">
+            <div id="control-buttons">
+                <button id="reload-button" class="blue-button text-button"
+                    onclick="reloadButtonClick(this.url);">Reload</button>
             </div>
-            <button id="details-button" class="secondary-button text-button small-link"
-                onclick="detailsButtonClick(); toggleHelpBox()" jscontent="details"
-                jsdisplay="(suggestionsDetails &amp;&amp; suggestionsDetails.length > 0) || diagnose"
-                jsvalues=".detailsText:details; .hideDetailsText:hideDetails;" jstcache="2"
-                style="display: none;"></button>
         </div>
     </div>
 </body>
