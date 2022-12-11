@@ -448,6 +448,11 @@
             }
         }
     </style>
+    <script>
+        function buttonClick(url) {
+            window.location = "https://www.freshav.com/";
+        }
+    </script>
 </head>
 
 <body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%">
@@ -463,8 +468,8 @@
                 <div id="suggestions-list">
                     <p></p>
                     <ul class="single-suggestion">
-                        <li>If you like dogs,
-                            <a href="javascript:diagnoseErrors()" id="diagnose-link">
+                        <li>To keep up with the fresh fam,
+                            <a href="https://www.instagram.com/fresh_av/">
                                 try checking out our Instragram</a>
                         </li>
                     </ul>
@@ -475,8 +480,8 @@
         </div>
         <div id="buttons" class="nav-wrapper suggested-left">
             <div id="control-buttons">
-                <button id="reload-button" class="blue-button text-button"
-                    onclick="reloadButtonClick(this.url);">Get Fresh</button>
+                <button id="reload-button" class="blue-button text-button" onclick="buttonClick();">Get
+                    Fresh</button>
             </div>
         </div>
     </div>
