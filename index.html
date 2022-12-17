@@ -12,7 +12,32 @@
             color: var(--link-color);
         }
 
+        @font-face {
+            font-family: "Gotham";
+            font-style: normal;
+            font-weight: normal;
+            src: url("https://static1.squarespace.com/static/602837963ea3482091edaffa/t/6197af6aee87d87ca122a40e/1637330794423/gotham-book-webfont.woff2") format("woff2")
+        }
+
+        @font-face {
+            font-family: "Gotham";
+            font-style: normal;
+            font-weight: bold;
+            src: url("https://static1.squarespace.com/static/602837963ea3482091edaffa/t/6197afa59c2943677f771b09/1637330853626/gotham-bold-webfont.woff2") format("woff2")
+        }
+
+        @font-face {
+            font-family: "Gotham";
+            font-style: italic;
+            font-weight: normal;
+            src: url("https://static1.squarespace.com/static/602837963ea3482091edaffa/t/6197f7f20bfdf1140872ed62/1637349362263/gotham-bookitalic-webfont.woff2") format("woff2")
+        }
+
         body {
+            --freshav-blue-dark: #001e37;
+            --freshav-yellow: #ffb400;
+            --freshav-blue-light: #1eb4e1;
+            --freshav-orange: #ff6e00;
             --background-color: #fff;
             --error-code-color: var(--google-gray-700);
             --google-blue-100: rgb(210, 227, 252);
@@ -28,11 +53,10 @@
             --google-gray-800: rgb(60, 64, 67);
             --google-gray-900: rgb(32, 33, 36);
             --heading-color: var(--google-gray-900);
-            --link-color: rgb(88, 88, 88);
+            --link-color: var(--google-blue-600);
             --popup-container-background-color: rgba(0, 0, 0, .65);
-            --primary-button-fill-color-active: var(--google-blue-700);
-            --primary-button-fill-color: var(--google-blue-600);
-            --primary-button-text-color: #fff;
+            --primary-button-fill-color: var(--freshav-yellow);
+            --primary-button-text-color: var(--freshav-blue-dark);
             --quiet-background-color: rgb(247, 247, 247);
             --secondary-button-border-color: var(--google-gray-500);
             --secondary-button-fill-color: #fff;
@@ -62,9 +86,8 @@
                 --error-code-color: var(--google-gray-500);
                 --heading-color: var(--google-gray-500);
                 --link-color: var(--google-blue-300);
-                --primary-button-fill-color-active: rgb(129, 162, 208);
-                --primary-button-fill-color: var(--google-blue-300);
-                --primary-button-text-color: var(--google-gray-900);
+                --primary-button-fill-color: var(--freshav-blue-dark);
+                --primary-button-text-color: var(--freshav-yellow);
                 --quiet-background-color: var(--background-color);
                 --secondary-button-border-color: var(--google-gray-700);
                 --secondary-button-fill-color: var(--google-gray-900);
@@ -73,13 +96,19 @@
                 --small-link-color: var(--google-blue-300);
                 --text-color: var(--google-gray-500);
             }
+
+            button#reload-button {
+                border-width: .075rem;
+            }
         }
 
         button {
-            border: 0;
+            border: .1rem solid var(--primary-button-text-color);
             border-radius: 4px;
             box-sizing: border-box;
             color: var(--primary-button-text-color);
+            font-family: "Gotham", sans-serif;
+            font-weight: bold;
             cursor: pointer;
             float: right;
             font-size: .875em;
@@ -94,7 +123,9 @@
         }
 
         button:active {
-            background: var(--primary-button-fill-color-active);
+            color: var(--primary-button-fill-color);
+            background: var(--primary-button-text-color);
+            border-color: var(--primary-button-fill-color);
             outline: 0;
         }
 
@@ -343,8 +374,6 @@
         }
 
         .icon-generic {
-            /* Can't access chrome://theme/IDR_ERROR_NETWORK_GENERIC from an untrusted
-     * renderer process, so embed the resource manually. */
             content: url(face.gif);
         }
 
@@ -353,7 +382,7 @@
         }
 
         #suggestions-list a {
-            color: var(--google-blue-600);
+            color: var(--link-color);
         }
 
         #suggestions-list p {
@@ -480,8 +509,7 @@
         </div>
         <div id="buttons" class="nav-wrapper suggested-left">
             <div id="control-buttons">
-                <button id="reload-button" class="blue-button text-button" onclick="buttonClick();">Get
-                    Fresh</button>
+                <button id="reload-button" class="blue-button text-button" onclick="buttonClick();">GET FRESH</button>
             </div>
         </div>
     </div>
